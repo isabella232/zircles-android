@@ -9,7 +9,6 @@ import cash.z.ecc.android.feedback.*
 import cash.z.ecc.android.sdk.ext.SilentTwig
 import cash.z.ecc.android.sdk.ext.TroubleshootingTwig
 import cash.z.ecc.android.sdk.ext.Twig
-import com.google.firebase.crashlytics.FirebaseCrashlytics
 import dagger.Module
 import dagger.Provides
 import dagger.multibindings.IntoSet
@@ -48,9 +47,8 @@ class AppModule {
         preferences: SharedPreferences,
         defaultObservers: Set<@JvmSuppressWildcards FeedbackCoordinator.FeedbackObserver>
     ): FeedbackCoordinator {
-        return preferences.getBoolean(FeedbackCoordinator.ENABLED, false).let { isEnabled ->
+        return preferences.getBoolean(FeedbackCoordinator.ENABLED, true).let { isEnabled ->
             // observe nothing unless feedback is enabled
-            FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(isEnabled)
             Twig.plant(if (isEnabled) TroubleshootingTwig() else SilentTwig())
             FeedbackCoordinator(feedback, if (isEnabled) defaultObservers else setOf())
         }
@@ -70,14 +68,4 @@ class AppModule {
     @Singleton
     @IntoSet
     fun provideFeedbackConsole(): FeedbackCoordinator.FeedbackObserver = FeedbackConsole()
-
-    @Provides
-    @Singleton
-    @IntoSet
-    fun provideFeedbackMixpanel(): FeedbackCoordinator.FeedbackObserver = FeedbackMixpanel()
-
-    @Provides
-    @Singleton
-    @IntoSet
-    fun provideFeedbackCrashlytics(): FeedbackCoordinator.FeedbackObserver = FeedbackCrashlytics()
 }
