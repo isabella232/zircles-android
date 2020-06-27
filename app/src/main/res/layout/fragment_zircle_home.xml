@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_home">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hit_area_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_send_amount_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_send_amount_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18" />
+
+
+    <ImageView
+        android:id="@+id/icon_scan"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.0364"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0574"
+        app:layout_constraintWidth_percent="0.0621"
+        app:srcCompat="@drawable/ic_menu" />
+
+    <ImageView
+        android:id="@+id/icon_logo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.912"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.064"
+        app:layout_constraintWidth_percent="0.056"
+        app:srcCompat="@drawable/ic_piggy" />
+
+    <View
+        android:id="@+id/hit_area_scan"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="24dp"
+        android:alpha="0.3"
+        android:background="@android:color/transparent"
+        android:elevation="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_hit_area_top" />
+
+    <View
+        android:id="@+id/hit_area_receive"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginEnd="24dp"
+        android:background="@android:color/transparent"
+        android:elevation="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_hit_area_top" />
+
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:text="Welcome to Zircle"
+        android:textColor="@color/zcashWhite"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/icon_scan"
+        app:layout_constraintEnd_toStartOf="@+id/icon_logo"
+        app:layout_constraintStart_toEndOf="@+id/icon_scan"
+        app:layout_constraintTop_toTopOf="@+id/icon_scan" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_projects"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="No Projects Yet!"
+        android:textColor="@color/zircle_button_text_dark"
+        app:backgroundTint="@color/zircle_solid_button_light"
+        app:layout_constraintEnd_toEndOf="@+id/icon_logo"
+        app:layout_constraintStart_toStartOf="@+id/icon_scan"
+        app:layout_constraintTop_toTopOf="@+id/guideline_send_amount_bottom" />
+
+    <!--    <com.timqi.sectorprogressview.ColorfulRingProgressView-->
+    <!--        android:id="@+id/progress_ring"-->
+    <!--        android:layout_width="0dp"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        app:bgColor="@color/zircle_progress_background"-->
+    <!--        app:fgColorEnd="@color/zircle_gradient_end"-->
+    <!--        app:fgColorStart="@color/zircle_gradient_start"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintDimensionRatio="W,1:1"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent"-->
+    <!--        app:layout_constraintVertical_bias="0.456"-->
+    <!--        app:layout_constraintWidth_percent="0.68"-->
+    <!--        app:percent="75"-->
+    <!--        app:startAngle="0"-->
+    <!--        app:strokeWidth="48dp" />-->
+
+
+    <ImageView
+        android:id="@+id/vector_zircle"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:elevation="6dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio=",1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_zircle_logo" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_top"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="Join a Zircle"
+        android:textColor="@color/zircle_button_text_dark"
+        app:backgroundTint="@color/zircle_solid_button_light"
+        app:layout_constraintEnd_toEndOf="@+id/button_projects"
+        app:layout_constraintStart_toStartOf="@+id/button_projects"
+        app:layout_constraintTop_toTopOf="@+id/guideline_send_amount_top" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:text="Create New Zircle"
+        android:textColor="@color/zircle_button_text_light"
+        app:backgroundTint="@color/zircle_solid_button"
+        app:layout_constraintEnd_toEndOf="@+id/button_top"
+        app:layout_constraintStart_toStartOf="@+id/button_top"
+        app:layout_constraintTop_toBottomOf="@+id/button_top" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

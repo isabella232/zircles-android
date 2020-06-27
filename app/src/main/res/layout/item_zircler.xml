@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container_zircler"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="1dp"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    tools:ignore="RtlSymmetry">
+
+    <View
+        android:id="@+id/row_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/background_zircle_gradient_unpressed"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/text_start"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:gravity="start|center_vertical"
+        android:paddingStart="16dp"
+        android:textColor="@color/zircle_text"
+        app:layout_constraintEnd_toStartOf="@id/text_middle"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Contributor" />
+
+    <TextView
+        android:id="@+id/text_middle"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:gravity="end|center_vertical"
+        android:textColor="@color/zircle_text"
+        app:layout_constraintEnd_toStartOf="@id/text_end"
+        app:layout_constraintStart_toEndOf="@id/text_start"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Payments" />
+
+    <TextView
+        android:id="@+id/text_end"
+        android:layout_width="0dp"
+        android:layout_height="52dp"
+        style="@style/TextAppearance.MaterialComponents.Body1"
+        android:gravity="end|center_vertical"
+        android:paddingEnd="16dp"
+        android:textColor="@color/zircle_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/text_middle"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Total" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

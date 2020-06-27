@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_home">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_hit_area_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.04" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_content_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_content_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_form_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.33" />
+
+
+    <ImageView
+        android:id="@+id/icon_back"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHeight_percent="0.052"
+        app:layout_constraintHorizontal_bias="0.088"
+        app:layout_constraintStart_toStartOf="@id/guideline_content_start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0574"
+        app:layout_constraintWidth_percent="0.0887"
+        app:srcCompat="@drawable/ic_arrow_back_black_24dp"
+        app:tint="@color/colorAccent" />
+
+    <View
+        android:id="@+id/hit_area_scan"
+        android:layout_width="68dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="24dp"
+        android:alpha="0.3"
+        android:background="@android:color/transparent"
+        android:elevation="6dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/guideline_hit_area_top" />
+
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_projects"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="false"
+        android:text="Savings Goal"
+        android:textColor="@color/zircle_button_text_dark"
+        app:backgroundTint="@color/zircle_solid_button_light"
+        app:layout_constraintBottom_toBottomOf="@+id/icon_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/icon_back" />
+
+    <TextView
+        android:id="@+id/text_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:text="Enter details for your savings goal"
+        android:textColor="@color/zcashWhite"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_form_top"
+        app:layout_constraintStart_toStartOf="@+id/guideline_content_start"
+        app:layout_constraintTop_toBottomOf="@+id/button_projects" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_layout_goal_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Give your goal a name"
+        android:theme="@style/Zcash.Overlay.TextInputLayout"
+        app:boxBackgroundColor="@color/selector_input_background"
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:endIconDrawable="@drawable/ic_check_shield"
+        app:endIconMode="custom"
+        app:layout_constraintBottom_toTopOf="@id/text_layout_goal_amount"
+        app:layout_constraintEnd_toEndOf="@id/guideline_content_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_content_start"
+        app:layout_constraintTop_toBottomOf="@id/guideline_form_top">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_goal_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:maxLength="255"
+            android:singleLine="true"
+            android:textColor="@color/text_light"
+            android:textColorHint="@color/text_light_dimmed" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_layout_goal_amount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter your total savings goal"
+        android:theme="@style/Zcash.Overlay.TextInputLayout"
+        app:boxBackgroundColor="@color/selector_input_background"
+        app:boxBackgroundMode="filled"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:endIconDrawable="@drawable/ic_check_shield"
+        app:endIconMode="custom"
+        app:layout_constraintBottom_toBottomOf="@id/button_weekly"
+        app:layout_constraintEnd_toEndOf="@id/guideline_content_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_content_start"
+        app:layout_constraintTop_toBottomOf="@id/text_layout_goal_name">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_goal_amount"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:imeOptions="actionDone"
+            android:inputType="textNoSuggestions"
+            android:maxLength="255"
+            android:singleLine="true"
+            android:textColor="@color/text_light"
+            android:textColorHint="@color/text_light_dimmed" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_daily"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_rounded_gradient_ripple"
+        android:padding="18dp"
+        android:text="Daily"
+        android:textColor="@color/zircle_button_text_light"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/button_weekly"
+        app:layout_constraintEnd_toStartOf="@id/button_weekly"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/button_weekly" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_weekly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_rounded_gradient_ripple"
+        android:padding="18dp"
+        android:text="Weekly"
+        android:textColor="@color/zircle_button_text_light"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@id/button_date"
+        app:layout_constraintEnd_toStartOf="@id/button_monthly"
+        app:layout_constraintStart_toEndOf="@id/button_daily"
+        app:layout_constraintTop_toBottomOf="@id/text_layout_goal_amount" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_monthly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_rounded_gradient_ripple"
+        android:padding="18dp"
+        android:text="Monthly"
+        android:textColor="@color/zircle_button_text_light"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/button_weekly"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_weekly"
+        app:layout_constraintTop_toTopOf="@id/button_weekly" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/selector_rounded_gradient_ripple"
+        android:padding="18dp"
+        android:text="Set Date"
+        android:textColor="@color/zircle_button_text_light"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@id/button_bottom"
+        app:layout_constraintEnd_toStartOf="@id/button_will"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/button_weekly" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_will"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/selector_rounded_gradient_ripple"
+        android:padding="18dp"
+        android:text="At Will"
+        android:textColor="@color/zircle_button_text_light"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="@id/button_date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/button_date"
+        app:layout_constraintTop_toTopOf="@id/button_date" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_bottom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/selector_rounded_gradient_ripple"
+        android:padding="16dp"
+        android:text="Create New Zircle"
+        android:textColor="@color/zircle_button_text_light"
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_content_end"
+        app:layout_constraintStart_toStartOf="@id/guideline_content_start" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
